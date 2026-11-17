@@ -1,0 +1,81 @@
+######################################  Routing, prop drilling, Context API  #######################################
+
+
+>>>>> Routing 
+
+->  Jargon
+      1. Single page applications
+      2. Client side bundle
+      3. Client side Routing
+
+
+>> Routing 
+   
+   react-router-dom ->
+
+Lazy loading --> what is lazy loading -> React.lazy is a type of funtion used when we don't want to give all the pages to the user and we want them to get the pages lazily when the user asks for them or clicks on a link that opens it. A slightly more optimal website.
+
+Prop drilling --> We don't want that all the data is being pushed to the page from the start. we keep it nested and only when it is required it is called by drilling deep into the components. Push down state is used to lower the number of rerenders and the parent or the sibling dosen't have to rerender. We store the data about the path in the LCA (least common ancistor). Prop drilling makes the code a little ugly and loads and goes through branches even when it is not needed by the midiator. 
+
+--> Dosen't mean that parent re-renders children. It just means the syntactic uneasiness when writing code.
+
+
+ ######### Context API ( Helps in fixing Prop drilling )
+   
+   -> Makes it easy to pass components fast (teleport).
+     
+      The problem with passing propos 
+       
+       - Passing props is a great way to explicitly pipe data through your UI tree to the components that use it.
+         
+         But passing props can become verbose and inconvenient when you need to pass some prop deeply through the tree, or if many components need the same prop. The nearest common ancestor could be far removed from the components that need data, and lifting state up that high can lead to situation called "prop drilling".
+
+         wouldn't it be great if there were a way to "teleport" data to the component in the tree that need it without passing props? 
+   
+   -> If you use the context api, you're pushing your state management outside the code react components.
+
+
+
+###################  7.2 | Context, State management, recoil  ###########################
+
+
+--> Context API - 
+   
+   - why do you use the context API ?
+     --> To make rerendering more performent -- no
+     --> To make syntax cleaner/ get rid of re-rerendering -- yes
+
+
+--> State management using recoil
+ 
+   -> what is state management?
+     
+     -> A cleaner way to store the state of your app.
+        Until now, the cleanest thing you can do is context API. It lets you teleport state.
+
+        But there are better solutions that get rid of the problem that context API has (unnecessary re-rendering)
+   
+   Recoil--> A state management liberary for React (alternative - Zustand/Redux)
+
+        -> Recoil has a concept of an atom to store the state, An atom can be defined outside the state, can be teleported to any component.
+   
+   atom-->
+
+   useRecoilState-->
+
+   useRecoilValue-->
+
+   useSetRecoilState-->
+
+   selector-->
+
+Basic :- Atoms, selectors, Asynchronous data queries, useRecoilState, useRecoilValue, useSetRecoilState
+
+Advance :- atomFamily, selectorFamily, useRecoilStateLoadable, useRecoilValueLoadable 
+
+
+Asynchronous data queries :- 
+
+
+
+(suspanse, ErrorBoundary)

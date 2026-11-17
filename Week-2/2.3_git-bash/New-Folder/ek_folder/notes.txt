@@ -1,0 +1,86 @@
+bash commands
+1. pwd "print working directory"
+2. cd "change directory"
+3. ls "list files" the command displays a list of files and directories in the current directory.
+4. mkdir "make directory"
+5. touch "makes folder"
+6. cat "edit things inside a file"
+7. vi
+8. mv
+9. cp "copy file or folder"
+10. nvm
+11. npm "used to download dependencies"
+12. node "lets the content of a file to work on your local terminal"
+
+terminal is nothing but another interface to do things on your machine
+
+//         *DIFFERENT USAGE OF THE LISTED NODE COMMANDS*          //
+
+1. i> ls -l (gives more details about the listed files and folders)
+   ii> ls -R (gives the details of the sub directories as well)
+   iii> ls -lt (also gives the time when the file was last modified)
+   iv> ls -la shows all the hidden files too which might not be autharized
+   v> ls -lRa (shows the directories and sub directories with the hidden folders too)
+   vi> ls -lr (gives the list of all the modified files in reverse order *newest first*)
+   vii> ls -s (listing the files by size in terminal)
+   viii> ls -lR | grep .json (get you all the .json files from the directory)
+   ix> ls *.js (list of all the ones ending with .js can be used for other types of files aswell)
+   x> ls ind* (if you are looking for some files but only know starting initials)
+   xi> ls .. (gives all the directories and folders present)
+   xii> (keep using ls and cd to navigate between directories and folders of your choice)
+   xiii> cd .. (used to hop on to the previous directory, to hop back to multiple directories we can use cd ../ ../ ..)
+   xiv> pwd (gives you a well defined map of your present working directory)
+   xv> cat (concatenate : command to display the contents of the file)
+   xvi> touch (command used to make a new file)
+   xvii> cat > filename (command used to open a desired file and edit data to it, the press ctrl + d to exit the editing part)
+   xviii> cat >> (used to add a bunch of more details to the file)
+   xix> mkdir (command helps you to create a new directory)
+   xx> mkdir newfolder && cd newfolder (using multiple commands at the same time)
+   xxi> mkdir -p frontend/script
+        mkdir -p frontend/css
+        mkdir -p frontend/img
+        mkdir -p frontend/statics (all these commands are used to concatenate and make multiple directories)
+   xxii> mv index.js script.js (witll change the name of index.js to script.js)
+   xxiii> mv script.js newfolder (this command will move the script.js file to the new folder)
+   xxiv> mv index.js newfolder/script.js (this command will drop the index.js file to newfolder and also change its name to script.js)
+   xxv> cp (a command used to copy a file from one place to another we can also copy directories and even copy them recursively)
+   xxvi> cp -r (will let you recursively copy the directories too)
+   xxvii> rm (this command is used to delete a file)
+   xxviii> rm -r filename (command used to delete a folder or an a bunch of files)
+
+**************************Permissions for files and folders*********************************
+                          (-r -w -x symbols)
+
+   i> chmod (change file Permissions " modify the read, write and execute Permissions of a file)(u "user" g "group" o "other", - removing a Permission, + giving a Permission , weather it be r "read", w "write", or x "execute" or rwx)(then specify the file you want to do it for)(if it is a folder you have to add a -R)
+   For example - "chmod u+x index.js" would add an execute Permission to the index.js for the user
+   *numaric 4 is for read , 2 is for write , 1 is for execute*
+   ii> echo "message" (would display a message to the terminal)
+       echo $PATH (would display the path that your current location is in a detailed version)
+   iii> head file.txt (would give you the top 10 rows of the file.txt)
+   iv> tail file.txt (would give you the last 10 lines of the file.txt)
+   v> head -20 file.txt (would give you the top 20 lines of the file.txt) tail -20 file.txt (would give the last 20 lines of file.txt)
+   vi> command 1 | command 2 (a pipe operator whatever command comes from command 1 flows to command 2)
+       example - tail -n +25 newfile.txt | head 5
+   vii> wc (command gives a number of lines, number or worlds and number of characters)
+   viii> grep "one" newfile.txt (this command would give you the number of occurence of a word, phrase or line in the example we looking for the occurence of one in newfile.txt)
+         grep "one" newfile.txt | wc (giving word cound of one in file.txt)
+         grep "one" newfile.txt | wc -l (gives number of times it was used)
+         grep -c "one" newfile.txt (print the number of count of lines it occured)
+         grep -h "one" newfile.txt (give you the times when it occured)
+         grep -hi "one" newfile.txt (would give you even the updates or the occurance within another word)
+         grep -hir "one" . (this will do it for the whole directory even recursively)
+         grep -hin "one" newfile.txt (would give the exact line number where the "one" is written)
+         grep -o "one" newfile.txt (will only give you the matched parts)
+   ix> history 0 (this command is used to view all the commands you have used in the terminal)      
+
+        grep -A 5 ERROR log.txt (will give you the 5 lines after the occurence of that)
+        grep -B 5 ERROR log.txt (will give you the 5 lines before the occurance of that)
+        grep -C 5 ERROR log.txt (will give you the 5 lines before and 5 lines after the occurance of that)
+
+
+*****************************sed commands*****************************888
+i> sed -n '/ERROR/ p' log.txt (will print every line where ERROR is written)
+ii> sed -n '/ERROR/CRITICAL/' log.txt (will search for every occurance of ERROR and change it with CRITICAL)
+iii> sed -ibackup 's/ERROR/CRITICAL/' log.txt (will create a backup in case the old file is needed again)
+
+*************************************awk************************************

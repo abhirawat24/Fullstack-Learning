@@ -1,0 +1,80 @@
+######################## Databases #########################
+
+A databse is a storage where all the information (like, images, chats, confidential information, information that might needs authentication) is kept.
+
+************* HTTP servers (express for example) ********************
+
+1. why don't we let the user hit the database directly?
+2. What extra does http server provide exactly?
+
+i> Databases were created using protocols that browsers don't understand.
+ii> Databases don't have granual access as first class citizen. Vary hard to do user specific access in them.
+iii> There are some databases (firebase) that let you get rid of http server and try their best to provide granol access.
+
+#> express server has complete access to the database, it does something known as "authentication check" which allows and if the access is allowed then it gives a sub-set of data to the user, as it cannot give the whole database access to everyone. a user is commonly given only a fixed set of data which they are allowed to access.
+
+
+>> Databases usually allow access to 4 primitives
+   1>> Create Data 
+   2>> Read Data 
+   3>> Update Data 
+   4>> Delete Data 
+
+Popularly known as CRUD 
+
+>> Given a users request this is all a Database needs to support.
+
+>> In Mongoose first you define the schema,
+   This is counter intuitive since mongoDB is schemaless
+
+   That is true, but mongoose makes you define schema for things like authentications/validating data before it goes in the DB to make sure you're doing things right. Schemaless databases can be very dangeroys, using schemas in mongo makes it slightly less dangerous
+
+Schema == the structure in which the data has been kept.
+
+The databases which strictly follow the rule that the data has to be stored in a schema are called SQL(Structured Quare Language) Databases.
+
+ex. User ->
+          email ->
+          password ->
+          firstname ->
+          city ->
+          age ->   (this is a how a schema might look like)
+
+NoSQL databases like MongoDB can be used to store any type of data in any format not strictly following a pattern, we can send Json data, etc.
+
+MongoDB lets you make schemaless entries. still mongoose dosen't let you make entries but needs to be define a schema. dosen't mean that MongoDB is strict and needs a schema. 
+
+while using express and mongoose we dedine a strict schema and it is benifitial things included like autocompletions/validation before going to the database it makes sure you're doing things right. 
+
+Schemaless DBs can be dangerous, using schemas in mongo makes it slightly less dangerous.
+
+For ex. the difference between TypeScript and JavaScript. 
+
+While JS is loosely typed and does not follow type strictly, TS on the otherhand provides features like type safety. making it a better choice providing long term benifits.
+
+Defining Schema :-
+example:- 
+
+const UserSchema = new mongoose.Schema({
+   email: String,
+   password: String,
+   purchasedCourse: [{
+      type: mongoose.Schema.Type.ObjectId,
+      ref: 'Course'
+      }]
+});
+
+const CourseSchema = new mongoose.Schema({
+   title: String,
+   price: 5999
+});
+
+
+calling the schema :-
+
+const User = mongoose.model('User', UserSchema);
+const Course = mongoose.model('Course', CourseSchema);
+
+SQL databases does not let you store complex objects or data and follows a strict schema while using mongoDB we store complex objects in form of tables and we can define relationships between the data that is what the benifit we have in NoSQL database like MongoDB where we can give "refrences" to another table.
+
+

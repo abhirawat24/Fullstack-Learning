@@ -1,0 +1,20 @@
+>>  We can create function werte other people can send callback, this is good but could lead to callback hell.
+
+>>  Having a setTimeout inside another setTimeout is a bad practice, as this takes more time.
+
+>>  An Async function should not be nested. 
+
+>>  JavaScript threads should not be stuck at one place for long time, if one process is taking a little long time the work should be kept in a side and other process should get time to run, "Promises" help in this. Let you get asyncronus functions. 
+
+>> Callbacks lead to unnecessary indentation This is called "Callback Hell".
+
+>>  Promises laed to cleaner code when it comes to async function call under async function call under async function call and so on.
+
+>>  Promises are used for asyncronus programming (.then)
+
+>>  - Callbacks => Have something called the callback hell.
+    - Promises => Resolve this issue with something called as promise chaining , async await.
+
+>>  .catch() is a method that is used to handle errors in promises. It is used to handle errors.
+
+>>  In a promisified function we use the .try() and .catch() method to catch the error.

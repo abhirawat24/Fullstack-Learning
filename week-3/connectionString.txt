@@ -1,0 +1,5 @@
+mongodb+srv://abhirawat102_db_user:4Xc7u7jXuwlzvWSq@cluster0.occmkor.mongodb.net/
+
+
+
+postgresql://neondb_owner:npg_faIA5lzHmQW2@ep-crimson-morning-a8d0geo2-pooler.eastus2.azure.neon.tech/neondb?sslmode=require&channel_binding=require

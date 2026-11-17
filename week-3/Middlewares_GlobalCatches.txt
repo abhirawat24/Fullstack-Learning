@@ -1,0 +1,21 @@
+Middlewares, authentication, global catchges, zod
+
+1. middlewares are used to do pre checks.
+
+process includes authentication and input validation ... after which the main or actual logic is kicked in.
+
+#authentication and input validation are  the main feature that every good website sould have. AKA need of middlewares.
+
+# A code can be braught more and more to optimum and being in express or in any other languages we do it via using middlewares
+
+# a middleware is a callback function that does a number of checks which happen in a sequence.
+
+#function(req, res, next) // in this req is the request , res is the response, next is the control on our hand as to where we want the flow of the program to go to
+
+
+>> app.use is used to declare a function that has to be in each and every coming after it has been declared.
+
+>>  app.use(express.json()) returns a function in itself.
+
+(Google it: how does a web page rander, what is the DOM, how does CSS cascad)
+

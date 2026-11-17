@@ -1,0 +1,72 @@
+***********************************************************Git/ GitHub notes***************************************************
+
+
+Git - A virsion control system 
+
+a virsion control system is used to maintain the whole file or project, while it is also helpful to manage, view history, compair changes, see last modification or when or who made the changes on the project like the whole history of the project.
+
+
+Used as to make new versions of code while also maintaining the previous versions of the code.
+
+Blob - Binary Large Object , in git files and there versions are not represented by there name but by there hash name. everything is content-addressed.
+
+trees-  A tree is an object represents directory, holds blobs or sub- directories. it is a binary file that stores refrences to blobs and trees which are also named as hash of the tree.
+
+Commits-
+        A commit holds the current state of the repo, also named by SHA1 hash.
+        commit object = a node of the linked list.
+        every commit object has a pointer to the commit object.
+        from a commit you can view the history of the commit also the parent.
+        if the commit has multiple parent commits, than that perticular commit has been created by merging two branches.
+
+Git commands - 
+              i> clone- brings the repository hosted somewhere into folder or local machine
+              ii> add - track your files and changes in git
+              iii> commit - save your files in git
+              iv> push - upload your commits to a git repo, like GitHub
+              v> pull - download changes from a remote repo to local repo.
+
+
+git commands to solve conflicts 
+     i> git log --merge : produce the list of commits that are causing the conflits
+     ii> git diff : identify the differences between the states repositories or files.
+     iii> git checkout : used to undo changes made to the file, or for changing area.
+     iv> git reset --mixed : used to undo changes to the working directory and staging area.
+     v> git merge --abort : helps in exiting the merge process and returning back to the state before the merging began.
+     vi> git reset : used at the time of merge conflit to reset the conflicted files to their original state.
+
+GitHub multiple uses
+     i> Create new repositories.
+     ii> Manage Codebases, add existing local coadbases to GitHub.
+
+git init - (creates a github repository in the folder)                   
+got status (shows the status of the files if it has been added or not)
+git add. (adds all the files makes them ready to commit to the github file)
+git rm --cached <file name> (any file that you don't want in the staging area or not to be added can be removed by this command)
+git commit -m "first commit" (when we add a commit we most likely add a message here for example "first commit")
+git branch -M main
+git remote add origin https://github.com/____/__.git (the url of the github repository we want the commits to be made to should be written here)
+git remote -v (shows the repository associated with the files we are working on, can be used for fatching and pushing)
+git push -u origin main (pushes the updates made by us to the master or the main branch)
+git clone https://github.com/______/______.git (used to clone an existing repository from github to our local machine) 
+git branch (shows which branch are we currently working on)
+git checkout -b xyz (here checkout mean we want to get out of the main branch, -b xyz leading to the branch we want to go to or work on, now the branch i am on will be xyz)
+git diff xyz (will show what changes we have made in the files in our other branch, review it)
+git merge xyz (this will merge the new updates we made in the branch to the main branch)
+git branch -d xyz (used to delete a certain branch of here for example for deleting xyz )
+
+
+
+** Git commands to resolve conflicts **
+
+git log --merge : Produce the list of commits that are causing the conflict.
+git diff : Identify the difference between the states repositories or files.
+git checkout : Used to undo the changes made to the file, or for changing branches.
+git reset --mixed : Useed to undo changes to the working directory and staging area.
+git merge --abort : Helps in exiting the merge process and returning back to the state before the merging began.
+git reset : Used at the time of merge conflit to reset the conflicts files to their original state.
+
+
+->we can eather update the edits or say the changes to main branch or create a branch
+-> GitHub keeps a history of the commits, a unique identifier is associated with each of the commits made while looking at the history showing the updated lines and the lines removed or editied.
+

@@ -1,0 +1,39 @@
+######################## Node.js runtime | HTTP #####################################
+
+>>Node.js and its runtime
+  
+  =>ECMAScript is a scripting language specification on which JavaScript is based. Ecma international is in charge of standardizing ECMAScript.
+
+  =>JavaScript is a scripting language that conforms to the ECMAScript specification. It's the most widely known and used implementation of ECMAScript.
+  
+  => Node.js -> Some smart people took out the V8 engine Added some backend things (filesystem reads) on top to create a new runtime with BE languages like java.   JS was never meant to be run in the backend eventually became very popular and is a popular choice of runtime on the backend. 
+
+  -->node.js is not a language not a framework but a runtime that can run javascript.
+
+  --> DNS - Domain Name service. Basically like naming the ips (123.123.123.123) address.
+
+  --> HTTP Protocol stuff
+
+  =>Things that happen on your server after the request is recieved.
+    -->You get the imputs (route, body, headers)
+    -->You do some logic on the input, calculate the output
+    -->You return the output body, headers and status code.
+
+==> What are the common methods you can send to your BE server?
+  --> GET --
+  --> POST -- Adding something
+  --> PUT -- Updating something
+  --> DELETE --
+
+What are the common status codes the backend responds with?
+   1. 200 - Everything is ok
+   2. 404 - Pages/route not found
+   3. 403 - Authentication issues
+   4. 500 - Internal server error
+
+HTTPS is much safe than HTTP 
+
+--> API (Application Programming Interface) - (HTTP API) - The requesrt that is going out
+
+--> Parsing a URL - parsing it means getting to exact place where i really need to be.
+

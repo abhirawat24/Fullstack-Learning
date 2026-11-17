@@ -1,0 +1,18 @@
+Fetch, Authentication and Databases
+
+1.Hashing - It is converting a simple string to some complicated set of text, numbers, signs (124ASdcdsc#45@$) for safety, like a fb login page, the password and data is converted to hash code. people could have same password at many places.The backend can only understand and convert it to the actual message or text.
+
+2.Encryption - some messages are converted to complex text and then converted back to the message when provided a key.
+
+3.JSON web tokens (JWT) - i> JSON - A little similer to encryption but only works for JSON data gives 
+                              you a very structured data. A little different from Hashing and encryption.
+                    ii> Web - As these are used in Web.
+                    iii> Tokens - The long string it gives us is known as token. It dosen't convert it
+                                  to some hashed code and all anyone who has the token knows the real 
+                                  message but in a better and arranged way. Anyone can see the original
+                                  output given the signature, which can only be verified using password.
+
+4. Local Storage - A place in your browser where you can store some data usually things that are syored include-
+                  i> Authentication tokens
+                  ii> User language preference
+                  iii> User theme preference

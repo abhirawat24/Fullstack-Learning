@@ -1,0 +1,96 @@
+########################################### React Notes #######################################
+
+>>>>>>>>>>>>>>React Component returns
+
+A Component can ony return a single level xml 
+
+1. Why -> Makes it easy to do reconcilation(The process of figuring out what dom updation needs to happe as the application goes)
+
+
+>>>>Re-Rendering in React
+
+A re-render means that
+
+1. React did some work to calculate what all should update in this Component
+2. The component actually got called
+3. The inspector shows you a boundering box around the component
+
+It happens when
+
+1. A state variable that is being used inside a component changes
+2. A parent component re-render triggers all children re-Rendering
+
+ You want to minimise the number of re-renders to make a highly optimal react application
+ The more the components that are getting re-rendered, the worse. if a parent state changes all the children re-render
+ Pushing to the lowest ansestor is a good practice as the number of re-renders decreases.
+ 
+  *The rule of thumb* - If there are multiple children in a tree or multiple component that need to use a state variable, you need to find the lowest common ansestor and store it there. or structure it in such a way that you push it down to the owest ansestor possible to avoide the unwanted re-renders.
+
+########################## Another approach #####################################
+
+Using react.memo (does memoization)
+
+ memo -> memo lets you skip re-rendering a component when its props are unchanged.
+
+######################   Keys in react   ###################################
+ ##   State Management   ##
+
+In React, keys are special, internal-only attributes passed to elements or components.
+
+When an array of data changes (e.g., sorting, adding, or deleting items), React needs a way to map the raw data to the existing DOM nodes.
+
+
+########################---------- Wrapper components  -----###############
+
+You can create a wrapper Card component that takes the inner React component as an input
+
+//useState, useEffect, useMemo, useCallback, useRef, useReducer, useContext, useLayoutEffect//
+
+>> useState -> These functions that start with "use" are called hooks,
+            
+            Hooks in React are functions that allow you to "hook into" React state and lifecycle features from function components.
+
+
+################################ Common hooks in react #########################################
+
+useState, useffect, useCallback, useMemo, useRef, useContext, custom hooks, Prop drilling
+
+** Points ** jargons ** 
+
+// Side effects --> In react the concept of side effects encompasses any operations that reach outside the functional scope of a React component. these operations can affect other components, interact with the browser, or perform asynchronous data fetching.
+
+// Hooks --> Hooks are a feature introduced in React 16.8 that allow you to use state and other React features without writing a class. They enable functional components to have access to stateful logic and lifecycle feature, which were previously only possible in class components. This has led to a more concise and readable way of writing components in React.
+
+
+>> useState --> Let's you describe the state of your app whenever state updates, it triggers a re-render which finally results in a DOM update.
+
+>> useEffect --> This hook is a feature in React, a popular JavaScript library for building user interfaces. It allows you to perform side effects in function components. Side effects are operations that can affect other components or can't be done during rendering, such as data fetching, subscriptions, or manually changing the DOM in React components.
+
+The "useEffect" hook serves the same purpose as 'componentDidMount', componentDidUpdate', and 'componentWillUnmount' in React class components, but unified into a single API.
+
+Write a component that takes a todo id as an input and fatches the data for that todo from "the given endpoint" and then renders it.
+
+
+ >> useMemo -->
+
+ //(memoization - {DSA concept} It means remembering some output given an input and not computing it again)
+
+ >> useCallback --> 'useCallback' is a hook in React, a popular JavaScript library for building user interfaces. It is used to memorize functions, which can help in optimization the performance of your application, especially in cases involving child components that rely on reference equality to prevent unnecessary renders.
+
+
+ >> custom hooks --> Just like useState, useEffects, you can write your own hooks ... Only condition is - it should start with a use (naming convention)
+
+
+ 
+ #####################  Reconciliation, state, useState, useEffect, useMemo, useCallback, useRef ####################
+
+
+ > Can you do DOM manipulation yourself - Yes 
+ > Should you do it yourself - No 
+ > Is it good to delegate the heavy task of calculating the DOM changes to React - Yes
+ > What do you give to React - The state
+ > How often does react re-render - Any time state changes 
+ > Does React have tricks to make calculation faster - Yes 
+
+
+>> useRef --> Gives you access to DOM elements. Overwriting can be done in DOM element using useRef.  

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Text Limit Alert</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      background-color: #f9f9f9;
+    }
+
+    input[type="text"] {
+      width: 300px;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    .message {
+      margin-top: 10px;
+      font-weight: bold;
+      display: none;
+    }
+
+    .green {
+      color: green;
+    }
+
+    .red {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Type Text (Limit: 20 characters)</h2>
+  <input type="text" id="textInput" maxlength="20" placeholder="Type here..." />
+  <p id="message" class="message"></p>
+
+  <script>
+    const input = document.getElementById('textInput');
+    const message = document.getElementById('message');
+
+    input.addEventListener('input', () => {
+      const length = input.value.length;
+
+      if (length >= 20) {
+        input.style.color = 'red';
+        message.textContent = 'Limit reached';
+        message.className = 'message red';
+        message.style.display = 'block';
+      } else if (length >= 15) {
+        input.style.color = 'green';
+        message.textContent = 'Limit almost reached';
+        message.className = 'message green';
+        message.style.display = 'block';
+      } else {
+        input.style.color = 'black';
+        message.style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>

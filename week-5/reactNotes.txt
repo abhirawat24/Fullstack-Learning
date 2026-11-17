@@ -1,0 +1,45 @@
+########################################### React.js ##############################################
+
+
+Jargons for the day :-
+
+1> Jsx -
+2> class vs className
+3> static vs dynamic websites
+4> State
+5> components
+6> re-rendering
+
+Unerstanding React :
+
+## Why do we need React ? 
+
+A website that dosen't change it's state around from time to time or say static websites can be written in HTML, CSS, JS.
+Making a dynamic website can also be done in HTML, CSS, JS. But React makes the website it easier to do DOM mamipulations.
+
+React is just an easier way to write normal HTML/CSS/JS. It's a new syntax, that under the hood gets converted to HTML/CSS/JS.
+
+
+(React code) ====> npm run build ====> (HTML/CSS/JS)
+
+Why React?
+
+>> People realised it's harder to do DOM manipulation the conventional way.
+>> There were liberaries that came into the picture that made it slightly easy, but still for a very big app it's very hard (ex-JQuery) 
+>> Eventually, VueJS/React created a new syntax to do frontends.
+>> Under the hood, the react compiler convert your code to HTML/CSS/JS.
+
+
+$$$$$$$$$
+
+To create a react app, there are 3 important things:-
+
+1> Components
+2> State
+3> Re-rendering
+
+When writing a react code we write state and a component 
+
+State :- An object that represents the current 'state' of the app, It represents the dynamic things in your app (things that change). 
+
+Components :- A component in a react function that updates or impliments and does operations on states.
